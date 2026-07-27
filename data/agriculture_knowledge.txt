@@ -1,0 +1,73 @@
+== AGRICULTURAL KNOWLEDGE BASE ==
+== Compiled for Agri-Genius Chatbot ==
+
+=== SECTION 1: MAJOR CROPS OF INDIA ===
+
+--- Wheat ---
+Wheat (Triticum aestivum) is one of the most important cereal crops globally and the second most produced grain in India. It is a Rabi crop, sown in October-December and harvested in March-April. Wheat thrives in cool, dry climates with temperatures between 10°C to 25°C during the growing season. It requires well-drained loamy or clay-loam soils with a pH range of 6.0 to 7.5. The ideal rainfall is 50-75 cm annually. Major wheat-producing states include Punjab, Haryana, Uttar Pradesh, Madhya Pradesh, and Rajasthan. Common varieties include HD-2967, PBW-343, WH-1105, and DBW-17. Wheat is susceptible to rust diseases (yellow rust, brown rust, black rust), powdery mildew, and Karnal bunt. Recommended seed rate is 100-125 kg per hectare for irrigated conditions and 125-150 kg per hectare for rainfed conditions.
+
+--- Rice ---
+Rice (Oryza sativa) is the staple food for over half of the world's population and India's most important Kharif crop. It is sown in June-July during the monsoon season and harvested in October-November. Rice requires high temperatures (20°C to 37°C), high humidity, and abundant water supply. It grows best in alluvial, clay, or loamy soils with good water retention capacity and a pH of 5.5 to 6.5. Annual rainfall requirement is 125-200 cm. Major rice-producing states include West Bengal, Uttar Pradesh, Punjab, Tamil Nadu, Andhra Pradesh, and Telangana. Popular varieties include Pusa Basmati-1, IR-64, Swarna (MTU-7029), and Samba Mahsuri. Major pests include stem borer, leaf folder, brown planthopper, and gall midge. Common diseases include blast, bacterial leaf blight, sheath blight, and tungro virus.
+
+--- Maize ---
+Maize (Zea mays) or corn is a versatile cereal crop grown in both Kharif and Rabi seasons. Kharif maize is sown in June-July and harvested in September-October, while Rabi maize is sown in October-November and harvested in March-April. Maize requires warm temperatures (21°C to 27°C) and well-drained sandy loam to loamy soils with pH 5.5 to 7.5. It is relatively drought-tolerant compared to rice but performs best with 50-100 cm of well-distributed rainfall. Major maize-producing states include Karnataka, Madhya Pradesh, Bihar, Tamil Nadu, and Telangana. Popular hybrid varieties include DHM-117, HQPM-1, and Vivek QPM-9. Major pests include fall armyworm, stem borer, and shoot fly. Common diseases include turcicum leaf blight, downy mildew, and maydis leaf blight.
+
+--- Cotton ---
+Cotton (Gossypium species) is India's most important fiber crop and a major cash crop. It is a Kharif crop sown in April-May and harvested in October-January. Cotton requires warm and humid climate with temperatures between 21°C to 30°C. It grows best in black cotton soils (regur) which have excellent moisture retention, but also performs well in alluvial and red soils with pH 6.0 to 8.0. Annual rainfall requirement is 50-100 cm. Major cotton-producing states include Gujarat, Maharashtra, Telangana, Karnataka, and Madhya Pradesh. Bt cotton varieties dominate Indian cotton farming. Major pests include bollworms (American, pink, spotted), whitefly, aphids, and jassids. Common diseases include bacterial blight, fusarium wilt, and grey mildew.
+
+--- Sugarcane ---
+Sugarcane (Saccharum officinarum) is a major commercial crop used for sugar and ethanol production. It is planted in January-March (spring planting) or October (autumn planting) and takes 10-18 months to mature. Sugarcane requires hot and humid tropical climate with temperatures of 20°C to 35°C. It grows best in well-drained loamy soils rich in organic matter with pH 6.5 to 7.5. Water requirement is very high at 150-250 cm annually. Major producing states include Uttar Pradesh, Maharashtra, Karnataka, Tamil Nadu, and Bihar. Popular varieties include Co-0238, CoLk-94184, and Co-86032. Major pests include early shoot borer, top borer, and scale insect. Diseases include red rot, smut, and grassy shoot disease.
+
+=== SECTION 2: SOIL TYPES AND MANAGEMENT ===
+
+--- Alluvial Soil ---
+Alluvial soil is the most widespread and agriculturally important soil type in India, covering about 40% of the land area. Found mainly in the Indo-Gangetic plains, river deltas, and coastal regions. It is formed by the deposition of sediments brought by rivers. Alluvial soil is rich in potash but deficient in nitrogen and phosphorus. It has good moisture retention and is very fertile. Two types exist: Khadar (new alluvium, lighter, more fertile) and Bhangar (old alluvium, darker, less fertile). Crops suited: wheat, rice, maize, sugarcane, pulses, and oilseeds. Management practices include adding organic manure and nitrogen-phosphorus fertilizers to supplement natural nutrient content.
+
+--- Black Soil (Regur) ---
+Black soil, also called regur or black cotton soil, is found in the Deccan Plateau region covering parts of Maharashtra, Madhya Pradesh, Gujarat, Karnataka, and Andhra Pradesh. It is formed from volcanic basalt rock (Deccan traps). Black soil is extremely rich in calcium carbonate, magnesium, potash, and lime but deficient in nitrogen, phosphorus, and organic matter. It has excellent moisture retention capacity due to high clay content, becomes very sticky when wet and develops deep cracks when dry. Best suited for cotton, soybean, jowar, wheat, sugarcane, and citrus fruits. Management requires careful irrigation to avoid waterlogging and addition of gypsum to improve soil structure.
+
+--- Red and Laterite Soil ---
+Red soil is found in southern and eastern India, covering parts of Tamil Nadu, Karnataka, Andhra Pradesh, Odisha, Jharkhand, and Chhattisgarh. The red color comes from iron oxide content. It is generally deficient in nitrogen, phosphorus, potassium, and humus. Red soil has a sandy to clay texture and is well-drained but has poor water-holding capacity. Laterite soil is a subtype found in high rainfall areas with heavy leaching. Crops suited include millets, groundnut, pulses, tobacco, and potato. Management requires regular application of organic manure, lime (to correct acidity, typical pH 4.5-6.5), and balanced NPK fertilizers. Mulching helps conserve soil moisture.
+
+=== SECTION 3: PEST AND DISEASE MANAGEMENT ===
+
+--- Integrated Pest Management (IPM) ---
+Integrated Pest Management is a sustainable approach that combines biological, cultural, mechanical, and chemical methods to manage pests while minimizing environmental damage. Key principles include: (1) Prevention through crop rotation, resistant varieties, and proper field sanitation; (2) Monitoring through regular field scouting, pheromone traps, and light traps to assess pest populations; (3) Biological control using natural enemies like Trichogramma wasps for bollworm, ladybird beetles for aphids, and Bacillus thuringiensis (Bt) for caterpillars; (4) Cultural practices like intercropping, trap cropping, and adjusting planting dates to avoid peak pest periods; (5) Chemical control as last resort using need-based, targeted application of recommended pesticides with proper safety measures.
+
+--- Common Pest Identification ---
+Fall Armyworm (Spodoptera frugiperda): Major threat to maize, identified by inverted Y-shaped marking on head. Larvae feed on leaves creating windowpane effect. Management includes early detection, use of Trichogramma releases, neem-based sprays, and if severe, targeted application of emamectin benzoate or chlorantraniliprole. Stem Borer: Affects rice and maize. Identified by dead hearts in vegetative stage and white ears in reproductive stage. Management includes clipping seedling tips during transplanting, light traps, and Trichogramma releases. Whitefly (Bemisia tabaci): Major pest of cotton, tomato, and chilli. Tiny white-winged insects found on leaf undersides. Vectors for leaf curl virus. Management includes yellow sticky traps, neem oil sprays, and avoiding excessive nitrogen fertilization.
+
+=== SECTION 4: IRRIGATION AND WATER MANAGEMENT ===
+
+--- Irrigation Methods ---
+Surface irrigation (flood/furrow) is the most common method in India, suitable for leveled fields but has 40-50% water use efficiency. Sprinkler irrigation improves efficiency to 70-80% and is suitable for most field crops, orchards, and undulating terrain. Drip irrigation provides the highest efficiency at 90-95% by delivering water directly to plant root zones through emitters; it is ideal for row crops, orchards, and water-scarce regions. Drip irrigation also enables fertigation (fertilizer application through irrigation water). The Pradhan Mantri Krishi Sinchayee Yojana (PMKSY) provides subsidies up to 55% for small/marginal farmers and 45% for other farmers for micro-irrigation adoption.
+
+--- Water Conservation Techniques ---
+Mulching with crop residues, plastic sheets, or organic materials reduces evaporation by 25-50%. Rainwater harvesting through farm ponds, check dams, and percolation tanks helps store monsoon water for dry season use. Conservation tillage (zero tillage, minimum tillage) reduces water loss and improves soil moisture retention. Raised bed planting saves 20-30% water compared to conventional flat bed planting. Laser land leveling improves irrigation efficiency by ensuring uniform water distribution across the field. Deficit irrigation strategy applies water below full crop water requirement at non-critical growth stages, saving 20-40% water with minimal yield reduction.
+
+=== SECTION 5: ORGANIC FARMING PRACTICES ===
+
+--- Composting and Organic Inputs ---
+Vermicomposting uses earthworms (Eisenia fetida) to convert organic waste into nutrient-rich compost. Apply 5-10 tonnes of vermicompost per hectare. Farm Yard Manure (FYM) from cattle dung should be well-decomposed before application at 10-15 tonnes per hectare. Green manuring involves growing and incorporating crops like Sesbania (Dhaincha), Crotalaria (Sunn hemp), or cowpea into soil before flowering to add nitrogen (60-80 kg N/ha). Neem cake acts as both organic fertilizer and pest repellent, applied at 250-500 kg per hectare. Jeevamrut is a traditional microbial culture made from cow dung, cow urine, jaggery, pulse flour, and water; applied through irrigation at 200 liters per acre every 15 days.
+
+--- Bio-fertilizers ---
+Rhizobium inoculants fix atmospheric nitrogen in legume crops (20-200 kg N/ha). Azotobacter fixes nitrogen in non-legume crops (20-40 kg N/ha). Phosphate Solubilizing Bacteria (PSB) like Bacillus megaterium make unavailable phosphorus accessible to plants, increasing phosphorus availability by 15-25%. Mycorrhizal fungi (VAM) enhance root nutrient absorption, especially phosphorus and zinc, and improve drought tolerance. Bio-fertilizer application methods include seed treatment (10g/kg seed), seedling root dipping, and soil application (2-5 kg per hectare mixed with FYM).
+
+=== SECTION 6: SEASONAL PLANTING CALENDAR (INDIA) ===
+
+--- Kharif Season (June-October, Monsoon crops) ---
+Sowing begins with monsoon onset (June-July). Major crops: Rice, Maize, Jowar (Sorghum), Bajra (Pearl Millet), Tur/Arhar (Pigeon Pea), Moong (Green Gram), Urad (Black Gram), Groundnut, Soybean, Cotton, Jute, and Sugarcane (spring planted). Land preparation should begin in May. Pre-monsoon dry sowing of millets is practiced in some regions.
+
+--- Rabi Season (October-March, Winter crops) ---
+Sowing begins after monsoon withdrawal (October-November). Major crops: Wheat, Barley, Gram (Chickpea), Masoor (Lentil), Mustard, Linseed, Peas, and Potato. These crops require cool temperatures during growth and warm, dry conditions for grain maturation. Irrigation is critical as these crops depend on residual soil moisture and supplemental irrigation.
+
+--- Zaid Season (March-June, Summer crops) ---
+Short season between Rabi harvest and Kharif sowing. Major crops: Watermelon, Muskmelon, Cucumber, Moong (summer), Fodder crops, and early vegetables. These crops require warm temperatures and adequate irrigation. Zaid crops help maintain soil cover and provide additional income between main seasons.
+
+=== SECTION 7: MODERN AGRICULTURAL TECHNOLOGIES ===
+
+--- Precision Agriculture ---
+Precision agriculture uses GPS, GIS, remote sensing, and IoT sensors to optimize farm inputs and increase efficiency. Soil sensors monitor real-time moisture, temperature, and nutrient levels. Drone technology enables aerial crop monitoring, precision spraying (reducing pesticide use by 30-40%), and field mapping. Variable Rate Technology (VRT) adjusts seeding, fertilizer, and pesticide rates based on within-field variability. Satellite-based crop monitoring through NDVI (Normalized Difference Vegetation Index) helps detect crop stress, nutrient deficiencies, and disease outbreaks early.
+
+--- Smart Farming Practices ---
+Hydroponics grows plants without soil using nutrient-rich water solutions, suitable for leafy vegetables and herbs in urban areas. Vertical farming maximizes production per unit area using stacked growing layers with controlled environment (temperature, humidity, light). Polyhouse/greenhouse farming protects crops from extreme weather and enables year-round production of high-value vegetables, flowers, and fruits. The National Horticulture Mission provides subsidies of 50% for polyhouse construction up to 4000 sq.m area.

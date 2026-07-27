@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: agri-genius
+    runtime: python
+    plan: free
+    buildCommand: |
+      pip install -r requirements.txt
+      python ingest.py
+    startCommand: gunicorn app:app --bind 0.0.0.0:$PORT --workers 2 --timeout 120
+    envVars:
+      - key: OPENROUTER_API_KEY
+        sync: false
+      - key: PYTHON_VERSION
+        value: "3.13"
