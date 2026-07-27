@@ -1,3 +1,14 @@
+---
+title: Agri-Genius Chatbot
+emoji: 🌾
+colorFrom: green
+colorTo: emerald
+sdk: gradio
+sdk_version: 4.19.2
+app_file: app.py
+pinned: false
+---
+
 # Agri-Genius: AI-Powered Agricultural Chatbot
 
 Agri-Genius is a Retrieval-Augmented Generation (RAG) agricultural chatbot engineered to deliver precise, context-aware farming and agronomy advice. Built as a collaborative group project, the application combines custom document ingestion, vector similarity search using Chroma DB, and Large Language Model (LLM) orchestration via the OpenRouter API.
