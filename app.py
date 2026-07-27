@@ -138,34 +138,10 @@ def chat():
         return jsonify({"error": f"{error_msg}"}), 500
 
 
-# ── Gradio Interface (For Hugging Face Spaces) ─────────────────────────────
-try:
-    import gradio as gr
-
-    def gradio_chat(message, history):
-        try:
-            return query_rag(message)
-        except Exception as e:
-            return f"Error: {str(e)}"
-
-    demo = gr.ChatInterface(
-        fn=gradio_chat,
-        title="Agri-Genius: AI Agricultural Advisor",
-        description="RAG-powered agricultural chatbot providing expert advice on crops, soil management, pests, irrigation, and modern farming.",
-        examples=["What crops grow best in clay soil?", "How to manage fall armyworm in maize?", "Best organic fertilizers for rice"],
-    )
-except ImportError:
-    demo = None
-
-
 # ── Entry Point ────────────────────────────────────────────────────────────
 if __name__ == "__main__":
-    if os.environ.get("SPACE_ID") and demo:
-        # Running inside Hugging Face Space
-        demo.launch()
-    else:
-        # Running locally or traditional server
-        print("[*] Agri-Genius server starting...")
-        print("   Open http://127.0.0.1:5000 in your browser")
-        app.run(debug=True, host="127.0.0.1", port=5000)
+    print("[*] Agri-Genius server starting...")
+    print("   Open http://127.0.0.1:5000 in your browser")
+    app.run(debug=True, host="127.0.0.1", port=5000)
+
 

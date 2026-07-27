@@ -1,21 +1,7 @@
----
-title: Agri-Genius Chatbot
-emoji: 🌾
-colorFrom: green
-colorTo: emerald
-sdk: gradio
-sdk_version: 4.19.2
-app_file: app.py
-pinned: false
----
-
 # Agri-Genius: AI-Powered Agricultural Chatbot
 
 Agri-Genius is a Retrieval-Augmented Generation (RAG) agricultural chatbot engineered to deliver precise, context-aware farming and agronomy advice. Built as a collaborative group project, the application combines custom document ingestion, vector similarity search using Chroma DB, and Large Language Model (LLM) orchestration via the OpenRouter API.
 
-## Live Deployment
-
-- **Live Application:** [Agri-Genius on Render](https://agri-genius-chatbot.onrender.com) *(Update with your live URL if different)*
 - **GitHub Repository:** [https://github.com/Ravjot-anand/Agri-Genius-Chatbot](https://github.com/Ravjot-anand/Agri-Genius-Chatbot)
 
 ---
@@ -77,7 +63,7 @@ Building this project provided hands-on experience in practical AI engineering a
 1. **Vector Databases & Embeddings:** Gained deep insight into how text embeddings are generated locally (`sentence-transformers`), stored, indexed, and queried using vector databases like Chroma DB.
 2. **Retrieval-Augmented Generation (RAG):** Learned how to mitigate LLM hallucinations by dynamically injecting domain-specific context into prompts before inference.
 3. **Document Processing at Scale:** Understood the nuances of document chunking, overlap strategies, and extracting clean textual content from multi-page PDF research papers.
-4. **API Integration & Cloud Deployment:** Mastered environment variable management, production WSGI server configurations (Gunicorn), and automated deployments on platforms like Render.
+4. **Backend Engineering & Integration:** Mastered local server configuration, environment variable management, and REST API context integration.
 
 ---
 
@@ -88,7 +74,6 @@ Building this project provided hands-on experience in practical AI engineering a
 - **Embedding Model:** `sentence-transformers/all-MiniLM-L6-v2`
 - **Text Splitter & Loaders:** `langchain-text-splitters`, PyMuPDF (`fitz`)
 - **LLM Interface:** OpenRouter API (OpenAI Python SDK)
-- **Production Server:** Gunicorn WSGI
 - **Frontend:** Vanilla HTML5, CSS3, JavaScript
 
 ---
@@ -133,7 +118,6 @@ Agri-Genius-Chatbot/
 ├── app.py                  # Flask web server and RAG chat handler
 ├── ingest.py               # Document discovery, PDF parsing, and Chroma DB ingestion
 ├── requirements.txt        # Python package dependencies
-├── render.yaml             # Render deployment specification
 ├── .env                    # Local environment secrets (excluded from git)
 ├── .gitignore              # Version control exclusions
 ├── data/                   # Knowledge repository (PDF and TXT research files)
