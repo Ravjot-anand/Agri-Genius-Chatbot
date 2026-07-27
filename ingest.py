@@ -12,6 +12,14 @@ import os
 import glob
 import chromadb
 from langchain_text_splitters import RecursiveCharacterTextSplitter
+
+# ── Memory Optimization for Low-RAM Environments (Render 512MB) ─────────────
+os.environ["OMP_NUM_THREADS"] = "1"
+os.environ["MKL_NUM_THREADS"] = "1"
+os.environ["OPENBLAS_NUM_THREADS"] = "1"
+import torch
+torch.set_num_threads(1)
+
 from sentence_transformers import SentenceTransformer
 
 # ── Configuration ──────────────────────────────────────────────────────────

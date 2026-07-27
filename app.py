@@ -12,8 +12,16 @@ import os
 from dotenv import load_dotenv
 from flask import Flask, render_template, request, jsonify
 import chromadb
-from sentence_transformers import SentenceTransformer
 from openai import OpenAI
+
+# ── Memory Optimization for Low-RAM Environments (Render 512MB) ─────────────
+os.environ["OMP_NUM_THREADS"] = "1"
+os.environ["MKL_NUM_THREADS"] = "1"
+os.environ["OPENBLAS_NUM_THREADS"] = "1"
+import torch
+torch.set_num_threads(1)
+
+from sentence_transformers import SentenceTransformer
 
 # ── Load .env file ─────────────────────────────────────────────────────────
 load_dotenv()
