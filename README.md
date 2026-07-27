@@ -1,98 +1,139 @@
-# Agri-Genius 🌾
+# Agri-Genius: AI-Powered Agricultural Chatbot
 
-**AI-Powered Agricultural Chatbot** — A RAG (Retrieval-Augmented Generation) chatbot that provides expert farming advice using a local vector database and LLM.
+Agri-Genius is a Retrieval-Augmented Generation (RAG) agricultural chatbot engineered to deliver precise, context-aware farming and agronomy advice. Built as a collaborative group project, the application combines custom document ingestion, vector similarity search using Chroma DB, and Large Language Model (LLM) orchestration via the OpenRouter API.
 
-![Python](https://img.shields.io/badge/Python-3.10+-blue)
-![Flask](https://img.shields.io/badge/Flask-3.0+-green)
-![ChromaDB](https://img.shields.io/badge/ChromaDB-Vector_Store-orange)
+## Live Deployment
 
-## Features
+- **Live Application:** [Agri-Genius on Render](https://agri-genius-chatbot.onrender.com) *(Update with your live URL if different)*
+- **GitHub Repository:** [https://github.com/Ravjot-anand/Agri-Genius-Chatbot](https://github.com/Ravjot-anand/Agri-Genius-Chatbot)
 
-- **RAG-powered responses** — Retrieves relevant context from agricultural knowledge base before generating answers
-- **PDF & Text ingestion** — Drop `.pdf` or `.txt` files into `data/` and ingest automatically
-- **Local vector embeddings** — Uses `all-MiniLM-L6-v2` for fast, local embeddings via ChromaDB
-- **Modern chat UI** — Dark-themed, glassmorphism design with animations and suggestion chips
-- **OpenRouter integration** — Access 100+ LLMs through a single API
+---
 
-## Tech Stack
+## Role & Key Contributions
 
-| Component | Technology |
-|-----------|-----------|
-| Backend | Python, Flask |
-| Vector Store | ChromaDB (local) |
-| Embeddings | sentence-transformers (`all-MiniLM-L6-v2`) |
-| LLM | OpenRouter API (any model) |
-| Frontend | Vanilla HTML/CSS/JS |
+As part of this group initiative, my primary focus was designing the core system architecture and building the RAG pipeline.
 
-## Quick Start
+### Key Contributions:
+- **System Architecture Design:** Designed the end-to-end data flow spanning document parsing, chunking, vector storage, context retrieval, prompt construction, and server responses.
+- **RAG & Ingestion Pipeline:** Implemented `ingest.py` using PyMuPDF and `RecursiveCharacterTextSplitter` to parse multi-format agricultural research (PDF and TXT) and compute vector embeddings via `sentence-transformers` (`all-MiniLM-L6-v2`).
+- **Vector Database Integration:** Integrated Chroma DB for local persistent vector storage and fast cosine-similarity context retrieval.
+- **Backend & LLM Integration:** Developed the Flask web server (`app.py`) interfacing with OpenRouter for model execution and built standard error handling routines.
 
-### 1. Clone & Install
+---
 
+## System Architecture
+
+The following diagram illustrates the data ingestion and query execution flow of the Agri-Genius platform:
+
+```
++-----------------------------------------------------------------------------------+
+|                                INGESTION PIPELINE                                 |
+|                                                                                   |
+|  +--------------------+    +--------------------+    +-------------------------+  |
+|  | Agricultural Data  | -> | PyMuPDF / Text     | -> | Recursive Character     |  |
+|  | (PDFs & TXT)       |    | Loader             |    | Text Splitter           |  |
+|  +--------------------+    +--------------------+    +-------------------------+  |
+|                                                                   |               |
+|                                                                   v               |
+|  +--------------------+    +--------------------+    +-------------------------+  |
+|  | Persistent         | <- | Local Embedding    | <- | Document Chunks         |  |
+|  | Chroma DB Store    |    | (all-MiniLM-L6-v2) |    | (Overlap: 50, Size: 500)|  |
+|  +--------------------+    +--------------------+    +-------------------------+  |
++-----------------------------------------------------------------------------------+
+
++-----------------------------------------------------------------------------------+
+|                                 RAG QUERY PIPELINE                                |
+|                                                                                   |
+|  +--------------------+    +--------------------+    +-------------------------+  |
+|  | User Interface     | -> | Flask Server       | -> | Embed Query             |  |
+|  | (HTML/CSS/JS)      |    | (/chat Endpoint)   |    | (all-MiniLM-L6-v2)      |  |
+|  +--------------------+    +--------------------+    +-------------------------+  |
+|                                                                   |               |
+|                                                                   v               |
+|  +--------------------+    +--------------------+    +-------------------------+  |
+|  | LLM Response       | <- | OpenRouter API     | <- | Vector Similarity       |  |
+|  | Rendered to User   |    | (Prompt + Context) |    | Search (Top-K Chunks)   |  |
+|  +--------------------+    +--------------------+    +-------------------------+  |
++-----------------------------------------------------------------------------------+
+```
+
+---
+
+## What I Learned
+
+Building this project provided hands-on experience in practical AI engineering and RAG architecture design:
+
+1. **Vector Databases & Embeddings:** Gained deep insight into how text embeddings are generated locally (`sentence-transformers`), stored, indexed, and queried using vector databases like Chroma DB.
+2. **Retrieval-Augmented Generation (RAG):** Learned how to mitigate LLM hallucinations by dynamically injecting domain-specific context into prompts before inference.
+3. **Document Processing at Scale:** Understood the nuances of document chunking, overlap strategies, and extracting clean textual content from multi-page PDF research papers.
+4. **API Integration & Cloud Deployment:** Mastered environment variable management, production WSGI server configurations (Gunicorn), and automated deployments on platforms like Render.
+
+---
+
+## Technology Stack
+
+- **Language & Core Framework:** Python 3.10+, Flask
+- **Vector Database:** Chroma DB (Local Persistent Mode)
+- **Embedding Model:** `sentence-transformers/all-MiniLM-L6-v2`
+- **Text Splitter & Loaders:** `langchain-text-splitters`, PyMuPDF (`fitz`)
+- **LLM Interface:** OpenRouter API (OpenAI Python SDK)
+- **Production Server:** Gunicorn WSGI
+- **Frontend:** Vanilla HTML5, CSS3, JavaScript
+
+---
+
+## Local Development Setup
+
+### 1. Repository Setup
 ```bash
 git clone https://github.com/Ravjot-anand/Agri-Genius-Chatbot.git
 cd Agri-Genius-Chatbot
+```
+
+### 2. Environment Dependencies
+```bash
 pip install -r requirements.txt
 ```
 
-### 2. Set API Key
-
+### 3. API Configuration
 Create a `.env` file in the project root:
-
 ```env
-OPENROUTER_API_KEY=sk-or-v1-your-key-here
+OPENROUTER_API_KEY=your_openrouter_api_key_here
 ```
 
-Get a free API key at [openrouter.ai/keys](https://openrouter.ai/keys).
-
-### 3. Ingest Knowledge Base
-
+### 4. Data Ingestion
+Place your agricultural PDFs or text files inside the `data/` folder and execute the ingestion script:
 ```bash
-# Add your PDFs/text files to data/ folder, then:
 python ingest.py
 ```
 
-### 4. Run
-
+### 5. Launch Application
 ```bash
 python app.py
 ```
+Access the application locally at `http://127.0.0.1:5000`.
 
-Open [http://127.0.0.1:5000](http://127.0.0.1:5000) in your browser.
-
-## Adding Your Own Data
-
-Drop any `.pdf` or `.txt` agricultural documents into the `data/` folder and re-run:
-
-```bash
-python ingest.py
-```
-
-The pipeline will automatically discover, extract text, chunk, embed, and store all documents.
+---
 
 ## Project Structure
 
 ```
-AgriChatBot/
-├── app.py                  # Flask backend with RAG endpoint
-├── ingest.py               # Multi-format ingestion pipeline
-├── requirements.txt        # Python dependencies
-├── render.yaml             # Render deployment config
-├── .env                    # API key (not committed)
-├── .gitignore              # Git ignore rules
-├── data/                   # Knowledge base documents
+Agri-Genius-Chatbot/
+├── app.py                  # Flask web server and RAG chat handler
+├── ingest.py               # Document discovery, PDF parsing, and Chroma DB ingestion
+├── requirements.txt        # Python package dependencies
+├── render.yaml             # Render deployment specification
+├── .env                    # Local environment secrets (excluded from git)
+├── .gitignore              # Version control exclusions
+├── data/                   # Knowledge repository (PDF and TXT research files)
 │   └── agriculture_knowledge.txt
-├── chroma_db/              # Vector embeddings (auto-generated)
+├── chroma_db/              # Generated vector store (excluded from git)
 └── templates/
-    └── index.html          # Chat UI
+    └── index.html          # Web UI interface
 ```
 
-## Deployment (Render)
-
-1. Push this repo to GitHub
-2. Go to [render.com](https://render.com) → New Web Service → Connect your GitHub repo
-3. Render will auto-detect `render.yaml` and configure everything
-4. Add `OPENROUTER_API_KEY` in Render's Environment settings
+---
 
 ## License
 
-MIT
+This project is licensed under the MIT License.
