@@ -29,8 +29,8 @@
 ### 1. Clone & Install
 
 ```bash
-git clone https://github.com/Ravjot-anand/AgriChatBot.git
-cd AgriChatBot
+git clone https://github.com/Ravjot-anand/Agri-Genius-Chatbot.git
+cd Agri-Genius-Chatbot
 pip install -r requirements.txt
 ```
 
