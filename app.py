@@ -77,6 +77,31 @@ CONTEXT FROM KNOWLEDGE BASE:
 
 
 # ── Routes ─────────────────────────────────────────────────────────────────
+def query_rag(user_message: str) -> str:
+    """Core RAG logic: embed query, fetch ChromaDB context, call OpenRouter LLM."""
+    query_embedding = embedder.encode(user_message).tolist()
+    results = collection.query(
+        query_embeddings=[query_embedding],
+        n_results=TOP_K,
+    )
+    context_chunks = results["documents"][0] if results["documents"] else []
+    context = "\n\n---\n\n".join(context_chunks) if context_chunks else "No relevant context found."
+
+    system_message = SYSTEM_PROMPT.format(context=context)
+    client = get_llm_client()
+    completion = client.chat.completions.create(
+        model=LLM_MODEL,
+        messages=[
+            {"role": "system", "content": system_message},
+            {"role": "user", "content": user_message},
+        ],
+        temperature=0.7,
+        max_tokens=1024,
+    )
+    return completion.choices[0].message.content
+
+
+# ── Routes ─────────────────────────────────────────────────────────────────
 @app.route("/")
 def index():
     """Serve the chat interface."""
@@ -92,40 +117,11 @@ def chat():
             return jsonify({"error": "Message cannot be empty."}), 400
 
         user_message = data["message"].strip()
-
-        # 1. Embed the user query
-        query_embedding = embedder.encode(user_message).tolist()
-
-        # 2. Retrieve relevant context from ChromaDB
-        results = collection.query(
-            query_embeddings=[query_embedding],
-            n_results=TOP_K,
-        )
-
-        # Combine retrieved chunks into context string
-        context_chunks = results["documents"][0] if results["documents"] else []
-        context = "\n\n---\n\n".join(context_chunks) if context_chunks else "No relevant context found."
-
-        # 3. Construct the prompt with retrieved context
-        system_message = SYSTEM_PROMPT.format(context=context)
-
-        # 4. Call OpenRouter LLM
-        client = get_llm_client()
-        completion = client.chat.completions.create(
-            model=LLM_MODEL,
-            messages=[
-                {"role": "system", "content": system_message},
-                {"role": "user", "content": user_message},
-            ],
-            temperature=0.7,
-            max_tokens=1024,
-        )
-
-        assistant_reply = completion.choices[0].message.content
+        assistant_reply = query_rag(user_message)
 
         return jsonify({
             "response": assistant_reply,
-            "sources": len(context_chunks),
+            "sources": TOP_K,
         })
 
     except ValueError as e:
@@ -135,7 +131,6 @@ def chat():
         import traceback
         traceback.print_exc()
         error_msg = str(e)
-        # Surface helpful error messages for common issues
         if "api_key" in error_msg.lower() or "auth" in error_msg.lower():
             error_msg = "API key issue: " + error_msg
         elif "model" in error_msg.lower():
@@ -143,8 +138,31 @@ def chat():
         return jsonify({"error": f"{error_msg}"}), 500
 
 
+# ── Gradio Interface (For Hugging Face Spaces) ─────────────────────────────
+import gradio as gr
+
+def gradio_chat(message, history):
+    try:
+        return query_rag(message)
+    except Exception as e:
+        return f"Error: {str(e)}"
+
+demo = gr.ChatInterface(
+    fn=gradio_chat,
+    title="Agri-Genius: AI Agricultural Advisor",
+    description="RAG-powered agricultural chatbot providing expert advice on crops, soil management, pests, irrigation, and modern farming.",
+    examples=["What crops grow best in clay soil?", "How to manage fall armyworm in maize?", "Best organic fertilizers for rice"],
+)
+
+
 # ── Entry Point ────────────────────────────────────────────────────────────
 if __name__ == "__main__":
-    print("[*] Agri-Genius server starting...")
-    print("   Open http://127.0.0.1:5000 in your browser")
-    app.run(debug=True, host="127.0.0.1", port=5000)
+    if os.environ.get("SPACE_ID"):
+        # Running inside Hugging Face Space
+        demo.launch()
+    else:
+        # Running locally or traditional server
+        print("[*] Agri-Genius server starting...")
+        print("   Open http://127.0.0.1:5000 in your browser")
+        app.run(debug=True, host="127.0.0.1", port=5000)
+
